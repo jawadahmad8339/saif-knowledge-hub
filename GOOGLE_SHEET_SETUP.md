@@ -30,13 +30,15 @@ This guide shows you how to connect your website to a Google Sheet so every time
    - Click **Authorize access** > select your Google account.
    - Click **Advanced** (small text) > **Go to Untitled project (unsafe)**.
    - Click **Allow**.
-6. Copy the **Web app URL** (it looks like `https://script.google.com/macros/s/AKfycb.../exec`).
+6. Copy the **Web app URL**:
+   `https://script.google.com/macros/s/AKfycbzwA6NUptLokfqUngfgMFT9qZBzh9AOVVPYsCfjz58_OaYKNwhz0K62p_gWoQQuRSOSHA/exec`
 
 ---
 
-### Step 4: Paste the URL in Your Website
-1. On your website, scroll to the footer and click **"Admissions Database"** (or click the database icon).
-2. Click **"Google Sheet Settings"** and paste your Web App URL into the box.
-3. Click **Save Webhook URL**.
+### Step 4: Status - Connected & Active!
+Your Google Sheet Web App is **already embedded as the active default database** in `index.html`:
+- Every time a student clicks **"Enroll on WhatsApp"** and fills their name & phone, a row is automatically appended in your Google Sheet in real time.
+- Every time someone submits the **Contact & Inquiry** form, a row is automatically appended in your Google Sheet.
+- The connection was verified with an automated integration test on 2026-09-29 and confirmed receiving data with status `success`.
 
-All incoming student enrollments and inquiries will now automatically save directly into your Google Sheet!
+You can also open the **Admissions Database** modal on the website anytime to test the ping, export CSVs, or change the URL.

@@ -1728,7 +1728,7 @@
           </div>
 
           <div class="flex flex-col sm:flex-row gap-2">
-            <input type="url" id="google-sheet-url-input" placeholder="https://script.google.com/macros/s/AKfycb.../exec" class="flex-1 px-3 py-2 rounded-xl bg-surface-container-lowest border border-surface-container-high text-xs text-on-surface font-mono focus:outline-none focus:border-secondary"/>
+            <input type="url" id="google-sheet-url-input" value="https://script.google.com/macros/s/AKfycbzwA6NUptLokfqUngfgMFT9qZBzh9AOVVPYsCfjz58_OaYKNwhz0K62p_gWoQQuRSOSHA/exec" class="flex-1 px-3 py-2 rounded-xl bg-surface-container-lowest border border-surface-container-high text-xs text-on-surface font-mono focus:outline-none focus:border-secondary"/>
             <button onclick="saveGoogleSheetSettings()" class="px-4 py-2 rounded-xl bg-primary text-on-primary text-xs font-bold hover:bg-primary-container transition-colors shrink-0">
               Save URL
             </button>
@@ -2017,8 +2017,11 @@
       }
     }
 
+    // Default connected Google Sheet Web App URL
+    const DEFAULT_GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzwA6NUptLokfqUngfgMFT9qZBzh9AOVVPYsCfjz58_OaYKNwhz0K62p_gWoQQuRSOSHA/exec';
+
     function getGoogleSheetUrl() {
-      return localStorage.getItem('skh_google_sheet_url_v1') || '';
+      return localStorage.getItem('skh_google_sheet_url_v1') || DEFAULT_GOOGLE_SHEET_URL;
     }
 
     function saveGoogleSheetUrl(url) {
