@@ -205,14 +205,14 @@
 
       <!-- Action Buttons & Mobile Toggle -->
       <div class="flex items-center gap-space-md">
-        <button onclick="openEnrollModal()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-sm hover:bg-primary-container transition-all shadow-sm hover:shadow active:scale-95">
-          <span class="material-symbols-outlined text-[18px]">how_to_reg</span>
-          <span>Apply Online</span>
+        <button onclick="enrollOnWhatsApp()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 text-white font-label-md text-sm hover:bg-emerald-700 transition-all shadow-sm hover:shadow active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">chat</span>
+          <span>Enroll on WhatsApp</span>
         </button>
 
-        <a href="https://wa.me/923139309315" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 text-white font-label-md text-sm hover:bg-emerald-700 transition-colors shadow-sm" title="Chat with Sir Fawad Saif on WhatsApp">
-          <span class="material-symbols-outlined text-[18px]">chat</span>
-          <span>WhatsApp (0313 9309315)</span>
+        <a href="https://wa.me/923139309315" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-sm hover:bg-surface-container transition-colors border border-surface-container-high/80" title="Chat with Sir Fawad Saif on WhatsApp">
+          <span class="material-symbols-outlined text-[18px] text-emerald-600">call</span>
+          <span>0313 9309315</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -234,12 +234,12 @@
         <a href="#contact" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-on-surface-variant font-label-md hover:bg-surface-container">Contact &amp; Admissions</a>
         
         <div class="pt-3 border-t border-surface-container-high flex flex-col gap-2">
-          <button onclick="openEnrollModal(); closeMobileMenu();" class="w-full py-3 rounded-lg bg-primary text-on-primary font-label-md flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-sm">how_to_reg</span>
-            <span>Apply for Admission</span>
-          </button>
-          <a href="https://wa.me/923139309315" target="_blank" class="w-full py-3 rounded-lg bg-emerald-600 text-white font-label-md flex items-center justify-center gap-2">
+          <button onclick="enrollOnWhatsApp(); closeMobileMenu();" class="w-full py-3 rounded-lg bg-emerald-600 text-white font-label-md flex items-center justify-center gap-2 shadow-sm font-semibold">
             <span class="material-symbols-outlined text-sm">chat</span>
+            <span>Enroll on WhatsApp</span>
+          </button>
+          <a href="https://wa.me/923139309315" target="_blank" class="w-full py-2.5 rounded-lg border border-surface-container-high text-on-surface font-label-md flex items-center justify-center gap-2 hover:bg-surface-container text-xs">
+            <span class="material-symbols-outlined text-sm text-emerald-600">chat</span>
             <span>WhatsApp Helpline (0313 9309315)</span>
           </a>
         </div>
@@ -283,9 +283,9 @@
               <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
 
-            <button onclick="openEnrollModal()" class="px-space-lg py-3.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md hover:bg-white transition-all shadow-md flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">edit_note</span>
-              <span>Register Now</span>
+            <button onclick="enrollOnWhatsApp()" class="px-space-lg py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-label-md transition-all shadow-md flex items-center gap-2 font-semibold">
+              <span class="material-symbols-outlined text-sm">chat</span>
+              <span>Enroll on WhatsApp</span>
             </button>
 
             <a href="#why-us" class="px-space-lg py-3.5 rounded-lg bg-transparent text-on-primary font-label-md hover:bg-surface/10 transition-all border border-surface/20">
@@ -435,7 +435,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="showCourseDetails('english')" class="px-3 py-2 rounded-lg border border-surface-container-high text-on-surface hover:bg-surface-container text-xs font-label-md">Details</button>
-                <button onclick="openEnrollModal('English Language', '16,000 PKR')" class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-colors text-xs sm:text-sm font-semibold">Enroll Now</button>
+                <button onclick="enrollOnWhatsApp('English Language')" class="px-space-md py-2 rounded-lg bg-emerald-600 text-white font-label-md hover:bg-emerald-700 transition-colors text-xs sm:text-sm font-semibold flex items-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">chat</span>
+                  <span>Enroll on WhatsApp</span>
+                </button>
               </div>
             </div>
           </div>
@@ -473,7 +476,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="showCourseDetails('office')" class="px-3 py-2 rounded-lg border border-surface-container-high text-on-surface hover:bg-surface-container text-xs font-label-md">Details</button>
-                <button onclick="openEnrollModal('Office Automation', '16,000 PKR')" class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-colors text-xs sm:text-sm font-semibold">Enroll Now</button>
+                <button onclick="enrollOnWhatsApp('Office Automation')" class="px-space-md py-2 rounded-lg bg-emerald-600 text-white font-label-md hover:bg-emerald-700 transition-colors text-xs sm:text-sm font-semibold flex items-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">chat</span>
+                  <span>Enroll on WhatsApp</span>
+                </button>
               </div>
             </div>
           </div>
@@ -512,7 +518,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="showCourseDetails('ai')" class="px-3 py-2 rounded-lg border border-surface-container-high text-on-surface hover:bg-surface-container text-xs font-label-md">Details</button>
-                <button onclick="openEnrollModal('AI & Generative AI', '15,000 PKR')" class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-colors text-xs sm:text-sm font-semibold">Enroll Now</button>
+                <button onclick="enrollOnWhatsApp('AI & Generative AI')" class="px-space-md py-2 rounded-lg bg-emerald-600 text-white font-label-md hover:bg-emerald-700 transition-colors text-xs sm:text-sm font-semibold flex items-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">chat</span>
+                  <span>Enroll on WhatsApp</span>
+                </button>
               </div>
             </div>
           </div>
@@ -550,7 +559,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="showCourseDetails('shopify')" class="px-3 py-2 rounded-lg border border-surface-container-high text-on-surface hover:bg-surface-container text-xs font-label-md">Details</button>
-                <button onclick="openEnrollModal('Shopify E-Commerce', '15,000 PKR')" class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-colors text-xs sm:text-sm font-semibold">Enroll Now</button>
+                <button onclick="enrollOnWhatsApp('Shopify E-Commerce')" class="px-space-md py-2 rounded-lg bg-emerald-600 text-white font-label-md hover:bg-emerald-700 transition-colors text-xs sm:text-sm font-semibold flex items-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">chat</span>
+                  <span>Enroll on WhatsApp</span>
+                </button>
               </div>
             </div>
           </div>
@@ -589,7 +601,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="showCourseDetails('tailoring')" class="px-3 py-2 rounded-lg border border-surface-container-high text-on-surface hover:bg-surface-container text-xs font-label-md">Details</button>
-                <button onclick="openEnrollModal('Tailoring for Female', 'Special Scholarship Available')" class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-colors text-xs sm:text-sm font-semibold">Enroll Now</button>
+                <button onclick="enrollOnWhatsApp('Tailoring for Female')" class="px-space-md py-2 rounded-lg bg-emerald-600 text-white font-label-md hover:bg-emerald-700 transition-colors text-xs sm:text-sm font-semibold flex items-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">chat</span>
+                  <span>Enroll on WhatsApp</span>
+                </button>
               </div>
             </div>
           </div>
@@ -627,7 +642,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="showCourseDetails('marketing')" class="px-3 py-2 rounded-lg border border-surface-container-high text-on-surface hover:bg-surface-container text-xs font-label-md">Details</button>
-                <button onclick="openEnrollModal('Digital Marketing', '15,000 PKR')" class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-colors text-xs sm:text-sm font-semibold">Enroll Now</button>
+                <button onclick="enrollOnWhatsApp('Digital Marketing')" class="px-space-md py-2 rounded-lg bg-emerald-600 text-white font-label-md hover:bg-emerald-700 transition-colors text-xs sm:text-sm font-semibold flex items-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">chat</span>
+                  <span>Enroll on WhatsApp</span>
+                </button>
               </div>
             </div>
           </div>
@@ -807,7 +825,7 @@
                 <span class="text-on-surface-variant flex items-center gap-1">
                   <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> Verified Expert
                 </span>
-                <button onclick="openEnrollModal('Office Automation or AI', '15,000 PKR')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
+                <button onclick="enrollOnWhatsApp('Office Automation or AI with Sir Jawad Ahmad')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
                   Learn with Sir Jawad <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
                 </button>
               </div>
@@ -868,7 +886,7 @@
                 <span class="text-on-surface-variant flex items-center gap-1">
                   <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> Academic Head
                 </span>
-                <button onclick="openEnrollModal('English Language', '16,000 PKR')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
+                <button onclick="enrollOnWhatsApp('English Language with Sir Fawad Saif')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
                   Learn with Sir Fawad <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
                 </button>
               </div>
@@ -926,7 +944,7 @@
                 <span class="text-on-surface-variant flex items-center gap-1">
                   <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> Certified Trainer
                 </span>
-                <button onclick="openEnrollModal('Office Automation', '16,000 PKR')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
+                <button onclick="enrollOnWhatsApp('Office Automation & Typing with Sir Abdullah Khalil')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
                   Learn with Sir Abdullah <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
                 </button>
               </div>
@@ -1257,9 +1275,9 @@
             View All Courses
           </a>
           
-          <button onclick="openEnrollModal()" class="px-space-xl py-3.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md hover:bg-white transition-all shadow-xl font-bold text-sm flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">edit_calendar</span>
-            <span>Book Your Seat</span>
+          <button onclick="enrollOnWhatsApp()" class="px-space-xl py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-label-md transition-all shadow-xl font-bold text-sm flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">chat</span>
+            <span>Enroll on WhatsApp</span>
           </button>
           
           <a href="#contact" class="px-space-xl py-3.5 rounded-lg bg-transparent text-on-primary font-label-md hover:bg-surface/10 transition-all border border-surface/20 font-bold text-sm">
@@ -1330,8 +1348,9 @@
         <p class="text-xs text-on-surface-variant mb-0.5"><strong>Jawad Ahmad:</strong> <a href="tel:+923146926273" class="hover:underline text-secondary font-mono">0314 6926273</a></p>
         <p class="text-xs text-on-surface-variant mb-1"><strong>Abdullah Khalil:</strong> <a href="tel:+923402431494" class="hover:underline text-secondary font-mono">0340 2431494</a></p>
         <p class="text-xs text-on-surface-variant mb-3"><a href="mailto:saifknowledgehub@gmail.com" class="hover:underline text-secondary font-medium">saifknowledgehub@gmail.com</a></p>
-        <button onclick="openEnrollModal()" class="w-full py-2 rounded-lg bg-primary text-on-primary text-xs font-label-md hover:bg-primary-container transition-colors">
-          Online Admission Form
+        <button onclick="enrollOnWhatsApp()" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm font-semibold">
+          <span class="material-symbols-outlined text-sm">chat</span>
+          <span>Enroll on WhatsApp</span>
         </button>
       </div>
 
@@ -1359,120 +1378,7 @@
     <span class="material-symbols-outlined text-3xl">chat</span>
   </a>
 
-  <!-- ========================================================================= -->
-  <!-- INTERACTIVE ENROLLMENT MODAL DIALOG                                       -->
-  <!-- ========================================================================= -->
-  <div id="enroll-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200">
-      
-      <!-- Modal Header -->
-      <div class="bg-primary-container text-on-primary p-6 flex items-center justify-between">
-        <div>
-          <span class="inline-block px-2.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider mb-1">Online Admission</span>
-          <h3 class="font-headline-sm text-xl font-bold text-on-primary">Apply to Saif Knowledge Hub</h3>
-          <p class="text-xs text-on-primary-container mt-0.5">Secure your seat for the upcoming 2024 batch</p>
-        </div>
-        <button onclick="closeEnrollModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center text-lg transition-colors" aria-label="Close modal">
-          ✕
-        </button>
-      </div>
 
-      <!-- Modal Body Form -->
-      <div class="p-6">
-        <form id="modal-enroll-form" onsubmit="handleEnrollSubmit(event)" class="space-y-4">
-          
-          <div>
-            <label class="block text-xs font-label-md text-on-surface mb-1" for="modal-course">Selected Course *</label>
-            <select id="modal-course" required class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high focus:outline-none focus:border-secondary text-sm font-semibold text-on-surface">
-              <option value="English Language (16,000 PKR)">English Language — 16,000 PKR</option>
-              <option value="Office Automation (16,000 PKR)">Office Automation — 16,000 PKR</option>
-              <option value="AI & Generative AI (15,000 PKR)">AI &amp; Generative AI — 15,000 PKR</option>
-              <option value="Shopify E-Commerce (15,000 PKR)">Shopify E-Commerce — 15,000 PKR</option>
-              <option value="Tailoring for Female">Tailoring for Female (Specialized)</option>
-              <option value="Digital Marketing (15,000 PKR)">Digital Marketing — 15,000 PKR</option>
-            </select>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-label-md text-on-surface mb-1" for="modal-name">Student Full Name *</label>
-              <input type="text" id="modal-name" required placeholder="e.g. Asad Ali" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high focus:outline-none focus:border-secondary text-sm"/>
-            </div>
-            <div>
-              <label class="block text-xs font-label-md text-on-surface mb-1" for="modal-phone">WhatsApp Number *</label>
-              <input type="tel" id="modal-phone" required placeholder="e.g. 0313 9309315" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high focus:outline-none focus:border-secondary text-sm"/>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-label-md text-on-surface mb-1" for="modal-shift">Preferred Batch Timing</label>
-              <select id="modal-shift" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high focus:outline-none focus:border-secondary text-sm">
-                <option value="Morning Batch">Morning (9:00 AM – 12:00 PM)</option>
-                <option value="Afternoon Batch">Afternoon (1:00 PM – 4:00 PM)</option>
-                <option value="Evening Batch">Evening (5:00 PM – 8:00 PM)</option>
-                <option value="Weekend Batch">Weekend (Saturday &amp; Sunday)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-label-md text-on-surface mb-1" for="modal-mode">Campus / Online</label>
-              <select id="modal-mode" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high focus:outline-none focus:border-secondary text-sm">
-                <option value="Physical On-Campus Lab">On-Campus Lab (Recommended)</option>
-                <option value="Live Virtual Stream">Live Online Session</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-label-md text-on-surface mb-1" for="modal-city">City / Residence in Pakistan</label>
-            <input type="text" id="modal-city" placeholder="e.g. Lahore / Islamabad / Faisalabad" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high focus:outline-none focus:border-secondary text-sm"/>
-          </div>
-
-          <div class="p-3 rounded-xl bg-surface-container text-xs text-on-surface-variant flex items-center justify-between">
-            <span>Admission Registration Fee:</span>
-            <span class="font-bold text-on-surface text-sm text-emerald-700">FREE Online Registration</span>
-          </div>
-
-          <div class="pt-2 flex items-center gap-3">
-            <button type="button" onclick="closeEnrollModal()" class="w-1/3 py-3 rounded-xl border border-surface-container-high text-on-surface text-sm font-label-md hover:bg-surface-container transition-colors">
-              Cancel
-            </button>
-            <button type="submit" class="w-2/3 py-3 rounded-xl bg-primary text-on-primary text-sm font-label-md font-bold hover:bg-primary-container transition-all shadow-md flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-base">verified</span>
-              <span>Confirm Registration</span>
-            </button>
-          </div>
-
-        </form>
-
-        <!-- Success Feedback screen inside modal -->
-        <div id="modal-success-screen" class="hidden text-center py-6 space-y-4">
-          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-            <span class="material-symbols-outlined text-4xl">check_circle</span>
-          </div>
-          <div>
-            <h4 class="font-headline-sm text-xl font-bold text-on-surface">Registration Received!</h4>
-            <p class="text-xs text-on-surface-variant max-w-sm mx-auto mt-1" id="modal-success-msg">
-              Thank you! Your seat reservation request has been submitted. Our academic advisor will contact you on WhatsApp shortly.
-            </p>
-          </div>
-          <div class="p-3 bg-surface-container rounded-xl text-xs max-w-sm mx-auto font-mono text-on-surface">
-            Registration Reference: <strong id="reg-code" class="text-secondary font-bold">SKH-2024-9481</strong>
-          </div>
-          <div class="pt-2 flex flex-col gap-2">
-            <a id="modal-whatsapp-link" href="https://wa.me/923139309315" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-label-md text-sm font-semibold flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-lg">chat</span>
-              <span>Chat with Admissions on WhatsApp Now</span>
-            </a>
-            <button type="button" onclick="closeEnrollModal()" class="w-full py-2.5 rounded-xl border border-surface-container-high text-xs text-on-surface font-label-md hover:bg-surface-container">
-              Done &amp; Return to Website
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <!-- ========================================================================= -->
   <!-- COURSE DETAILS PREVIEW MODAL                                              -->
@@ -1519,8 +1425,9 @@
           <button onclick="closeCourseDetails()" class="w-1/3 py-2.5 rounded-xl border border-surface-container-high text-xs font-label-md text-on-surface hover:bg-surface-container">
             Close
           </button>
-          <button id="detail-enroll-btn" onclick="" class="w-2/3 py-2.5 rounded-xl bg-primary text-on-primary text-xs font-label-md font-bold hover:bg-primary-container transition-all shadow-md">
-            Enroll in This Course
+          <button id="detail-enroll-btn" onclick="" class="w-2/3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-label-md font-bold transition-all shadow-md flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px]">chat</span>
+            <span>Enroll on WhatsApp</span>
           </button>
         </div>
 
@@ -1846,58 +1753,21 @@
       }
     }
 
-    // Enrollment Modal Management
-    function openEnrollModal(courseName = '', fee = '') {
-      const modal = document.getElementById('enroll-modal');
-      const courseSelect = document.getElementById('modal-course');
-      const form = document.getElementById('modal-enroll-form');
-      const successScreen = document.getElementById('modal-success-screen');
-
-      // Reset states
-      form.classList.remove('hidden');
-      successScreen.classList.add('hidden');
-
-      if (courseName && courseSelect) {
-        // Find matching option
-        for (let i = 0; i < courseSelect.options.length; i++) {
-          if (courseSelect.options[i].value.includes(courseName) || courseSelect.options[i].text.includes(courseName)) {
-            courseSelect.selectedIndex = i;
-            break;
-          }
-        }
+    // Direct WhatsApp Enrollment System
+    function enrollOnWhatsApp(courseName = '') {
+      let text = "Hello Saif Knowledge Hub, I am interested in enrolling in a course. Please share admission details and schedule.";
+      if (courseName && courseName.trim() !== '') {
+        text = `Hello Saif Knowledge Hub, I want to enroll in the ${courseName.trim()} course. Please share admission details, fee structure, and batch schedule.`;
       }
-
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      const whatsappUrl = `https://wa.me/923139309315?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
     }
 
-    function closeEnrollModal() {
-      const modal = document.getElementById('enroll-modal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
+    // Compatibility shims
+    function openEnrollModal(courseName = '', fee = '') {
+      enrollOnWhatsApp(courseName);
     }
-
-    function handleEnrollSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('modal-enroll-form');
-      const successScreen = document.getElementById('modal-success-screen');
-      const name = document.getElementById('modal-name').value;
-      const phone = document.getElementById('modal-phone').value;
-      const course = document.getElementById('modal-course').value;
-
-      // Generate random registration code
-      const code = 'SKH-' + Math.floor(1000 + Math.random() * 9000);
-      document.getElementById('reg-code').textContent = code;
-
-      // Update whatsapp direct link
-      const waMsg = encodeURIComponent(`Hello Saif Knowledge Hub, I just registered for ${course}. My Name: ${name}, Phone: ${phone}, Ref Code: ${code}. Please share batch starting date.`);
-      document.getElementById('modal-whatsapp-link').href = `https://wa.me/923139309315?text=${waMsg}`;
-
-      form.classList.add('hidden');
-      successScreen.classList.remove('hidden');
-
-      showToast(`Admission confirmed for ${name}! Ref: ${code}`);
-    }
+    function closeEnrollModal() {}
 
     // Course Details Modal
     function showCourseDetails(courseKey) {
@@ -1922,7 +1792,7 @@
       const enrollBtn = document.getElementById('detail-enroll-btn');
       enrollBtn.onclick = () => {
         closeCourseDetails();
-        openEnrollModal(data.title, data.fee);
+        enrollOnWhatsApp(data.title);
       };
 
       document.getElementById('course-details-modal').classList.remove('hidden');
@@ -1978,9 +1848,6 @@
       }
     });
 
-    document.getElementById('enroll-modal')?.addEventListener('click', (e) => {
-      if (e.target.id === 'enroll-modal') closeEnrollModal();
-    });
 
     document.getElementById('course-details-modal')?.addEventListener('click', (e) => {
       if (e.target.id === 'course-details-modal') closeCourseDetails();
@@ -2157,7 +2024,7 @@
               <span class="text-on-surface-variant flex items-center gap-1">
                 <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> Certified Expert
               </span>
-              <button onclick="openEnrollModal('${teacher.enrollTarget || teacher.name}', 'Specialist Training')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
+              <button onclick="enrollOnWhatsApp('${teacher.enrollTarget || teacher.name}')" class="text-secondary font-bold hover:underline flex items-center gap-0.5">
                 Learn with Sir ${teacher.name.split(' ')[0]} <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
               </button>
             </div>
