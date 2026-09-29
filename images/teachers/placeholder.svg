@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="teacher-placeholder-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1c2f"/>
+      <stop offset="100%" stop-color="#1e3e62"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#teacher-placeholder-grad)"/>
+  <circle cx="200" cy="150" r="60" fill="#bac7e1" opacity="0.3"/>
+  <circle cx="200" cy="140" r="45" fill="#d6e3fe"/>
+  <path d="M125 330 C125 240, 275 240, 275 330 Z" fill="#d6e3fe" opacity="0.9"/>
+  <text x="200" y="375" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="1">FACULTY INSTRUCTOR</text>
+</svg>

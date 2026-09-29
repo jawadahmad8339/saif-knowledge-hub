@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="female-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#426086"/>
+      <stop offset="100%" stop-color="#7030a0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#female-grad)"/>
+  <!-- Hijab / Scarf silhouette & face -->
+  <path d="M100 28 C68 28 50 56 50 96 C50 140 68 178 100 178 C132 178 150 140 150 96 C150 56 132 28 100 28 Z" fill="#ffffff" opacity="0.95"/>
+  <ellipse cx="100" cy="98" rx="28" ry="34" fill="#fde2d1"/>
+  <path d="M72 100 C72 68 85 52 100 52 C115 52 128 68 128 100 C128 85 118 78 100 78 C82 78 72 85 72 100 Z" fill="#2d3133"/>
+  <!-- Elegant border -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.4"/>
+</svg>
