@@ -205,11 +205,6 @@
 
       <!-- Action Buttons & Mobile Toggle -->
       <div class="flex items-center gap-space-md">
-        <button onclick="openDatabaseModal()" title="View Admissions Database & Google Sheets" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-xs hover:bg-surface-container transition-colors border border-surface-container-high/80">
-          <span class="material-symbols-outlined text-[17px] text-emerald-600">database</span>
-          <span class="hidden xl:inline">Database</span>
-        </button>
-
         <button onclick="enrollOnWhatsApp()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 text-white font-label-md text-sm hover:bg-emerald-700 transition-all shadow-sm hover:shadow active:scale-95">
           <span class="material-symbols-outlined text-[18px]">chat</span>
           <span>Enroll on WhatsApp</span>
@@ -237,10 +232,6 @@
         <a href="#faculty" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-on-surface-variant font-label-md hover:bg-surface-container">Our Faculty</a>
         <a href="#testimonials" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-on-surface-variant font-label-md hover:bg-surface-container">Student Testimonials</a>
         <a href="#contact" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-lg text-on-surface-variant font-label-md hover:bg-surface-container">Contact &amp; Admissions</a>
-        <button onclick="openDatabaseModal(); closeMobileMenu();" class="px-4 py-2.5 rounded-lg text-on-surface font-label-md hover:bg-surface-container flex items-center gap-2 text-left">
-          <span class="material-symbols-outlined text-base text-emerald-600">database</span>
-          <span>Admissions Database &amp; Sheets</span>
-        </button>
         
         <div class="pt-3 border-t border-surface-container-high flex flex-col gap-2">
           <button onclick="enrollOnWhatsApp(); closeMobileMenu();" class="w-full py-3 rounded-lg bg-emerald-600 text-white font-label-md flex items-center justify-center gap-2 shadow-sm font-semibold">
@@ -768,12 +759,6 @@
             <p class="text-body-md text-on-surface-variant max-w-xl text-sm sm:text-base mt-1">
               Learn directly from certified master practitioners with proven industry track records in language, IT automation, and digital commerce.
             </p>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="openManageFacultyModal()" class="px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-xs sm:text-sm font-semibold hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm hover:shadow">
-              <span class="material-symbols-outlined text-base">tune</span>
-              <span>Adjust / Manage Teachers</span>
-            </button>
           </div>
         </div>
 
@@ -1368,15 +1353,14 @@
     <div class="max-w-7xl mx-auto border-t border-surface-container-high/60 pt-6 flex flex-col sm:flex-row items-center justify-between text-on-surface-variant text-xs gap-3">
       <div>© 2024–2025 Saif Knowledge Hub. All rights reserved.</div>
       <div class="flex flex-wrap items-center gap-4">
-        <button onclick="openDatabaseModal()" class="text-secondary hover:underline font-bold flex items-center gap-1">
-          <span class="material-symbols-outlined text-[15px]">database</span>
-          <span>Admissions Database</span>
+        <a href="#courses" class="hover:text-on-surface transition-colors">Courses</a>
+        <a href="#why-us" class="hover:text-on-surface transition-colors">Why Choose Us</a>
+        <a href="#contact" class="hover:text-on-surface transition-colors">Contact</a>
+        <!-- Discreet PIN-Protected Staff Portal for authorized admin only -->
+        <button onclick="openAdminAuthModal('database')" class="text-on-surface-variant/40 hover:text-secondary hover:underline flex items-center gap-1 transition-colors text-[11px]" title="Staff &amp; Faculty Login (PIN Protected)">
+          <span class="material-symbols-outlined text-[13px]">lock</span>
+          <span>Staff Portal</span>
         </button>
-        <button onclick="openManageFacultyModal()" class="text-on-surface-variant hover:text-on-surface hover:underline flex items-center gap-1">
-          <span class="material-symbols-outlined text-[15px]">badge</span>
-          <span>Faculty Studio</span>
-        </button>
-        <a href="#contact" class="hover:text-on-surface">Contact</a>
       </div>
     </div>
   </footer>
@@ -1536,9 +1520,19 @@
             <p class="text-xs text-on-primary-container mt-0.5">Add, remove, customize teachers and adjust their photos directly</p>
           </div>
         </div>
-        <button onclick="closeManageFacultyModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center text-lg transition-colors" aria-label="Close modal">
-          ✕
-        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="openDatabaseModal(true)" class="px-2.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-on-primary text-xs font-semibold flex items-center gap-1 transition-colors" title="Switch to Admissions Database">
+            <span class="material-symbols-outlined text-[15px]">table_chart</span>
+            <span>Database</span>
+          </button>
+          <button onclick="adminLogout()" class="px-2.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-on-primary text-xs font-semibold flex items-center gap-1 transition-colors" title="Lock admin portal">
+            <span class="material-symbols-outlined text-[15px]">lock</span>
+            <span>Lock</span>
+          </button>
+          <button onclick="closeManageFacultyModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center text-lg transition-colors" aria-label="Close modal">
+            ✕
+          </button>
+        </div>
       </div>
 
       <!-- Modal Body -->
@@ -1660,6 +1654,65 @@
   </div>
 
   <!-- ========================================================================= -->
+  <!-- ADMIN / STAFF SECURITY AUTHENTICATION MODAL (PROTECT DATABASE & FACULTY)   -->
+  <!-- ========================================================================= -->
+  <div id="admin-auth-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-surface-container-lowest w-full max-w-sm rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Modal Header -->
+      <div class="bg-primary-container text-on-primary p-5 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-primary-fixed">
+            <span class="material-symbols-outlined text-xl">lock</span>
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-base font-bold text-on-primary">Admin Authentication</h3>
+            <p class="text-[11px] text-on-primary-container">Authorized Staff Access Only</p>
+          </div>
+        </div>
+        <button onclick="closeAdminAuthModal()" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center text-sm transition-colors" aria-label="Close login dialog">✕</button>
+      </div>
+
+      <!-- Modal Body -->
+      <form id="admin-auth-form" onsubmit="handleAdminAuthSubmit(event)" class="p-5 space-y-4">
+        <input type="hidden" id="admin-auth-target" value="database"/>
+
+        <div>
+          <label class="block text-xs font-label-md text-on-surface font-semibold mb-1" for="admin-pin-input">
+            Security PIN / Password
+          </label>
+          <div class="relative">
+            <input type="password" id="admin-pin-input" required placeholder="Enter Admin PIN" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-surface-container-high text-sm text-on-surface font-mono focus:outline-none focus:border-secondary pr-10"/>
+            <button type="button" onclick="togglePinVisibility()" class="absolute right-3 top-2.5 text-on-surface-variant hover:text-on-surface">
+              <span class="material-symbols-outlined text-lg" id="pin-visibility-icon">visibility</span>
+            </button>
+          </div>
+          <p class="text-[11px] text-on-surface-variant mt-1.5 flex items-center gap-1">
+            <span class="material-symbols-outlined text-xs text-secondary">info</span>
+            <span>Default PIN: <strong class="text-on-surface font-mono">skh786</strong></span>
+          </p>
+        </div>
+
+        <div id="admin-auth-error" class="hidden p-2.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-rose-600 text-sm shrink-0">error</span>
+          <span>Incorrect Admin PIN. Access denied.</span>
+        </div>
+
+        <div class="flex items-center gap-2 pt-1">
+          <button type="button" onclick="closeAdminAuthModal()" class="w-1/3 py-2.5 rounded-xl border border-surface-container-high text-xs font-semibold text-on-surface hover:bg-surface-container">
+            Cancel
+          </button>
+          <button type="submit" class="w-2/3 py-2.5 rounded-xl bg-primary text-on-primary text-xs font-bold hover:bg-primary-container shadow-md flex items-center justify-center gap-1.5 transition-all">
+            <span class="material-symbols-outlined text-sm">lock_open</span>
+            <span>Unlock Portal</span>
+          </button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
   <!-- ADMISSIONS DATABASE & GOOGLE SHEETS DASHBOARD MODAL                       -->
   <!-- ========================================================================= -->
   <div id="leads-database-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
@@ -1682,7 +1735,13 @@
             <p class="text-xs text-on-primary-container mt-0.5">Track, manage student registrations, and sync with your Google Sheet</p>
           </div>
         </div>
-        <button onclick="closeDatabaseModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center text-lg transition-colors" aria-label="Close database dialog">✕</button>
+        <div class="flex items-center gap-2">
+          <button onclick="adminLogout()" class="px-2.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-on-primary text-xs font-semibold flex items-center gap-1 transition-colors" title="Lock admin portal">
+            <span class="material-symbols-outlined text-[15px]">lock</span>
+            <span>Lock</span>
+          </button>
+          <button onclick="closeDatabaseModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center text-lg transition-colors" aria-label="Close database dialog">✕</button>
+        </div>
       </div>
 
       <!-- Action Toolbar -->
@@ -1696,6 +1755,11 @@
         </div>
 
         <div class="flex items-center gap-2 shrink-0">
+          <button onclick="openManageFacultyModal(true)" class="px-3 py-2 rounded-xl border border-surface-container-high text-on-surface text-xs font-label-md font-semibold hover:bg-surface-container flex items-center gap-1.5 transition-colors" title="Switch to Faculty Manager">
+            <span class="material-symbols-outlined text-sm text-secondary">badge</span>
+            <span>Faculty Studio</span>
+          </button>
+
           <button onclick="toggleSheetSettingsPanel()" class="px-3 py-2 rounded-xl border border-surface-container-high text-on-surface text-xs font-label-md font-semibold hover:bg-surface-container flex items-center gap-1.5 transition-colors">
             <span class="material-symbols-outlined text-sm text-emerald-600">settings</span>
             <span>Google Sheet Settings</span>
@@ -1741,6 +1805,23 @@
           <div class="p-2.5 rounded-lg bg-surface-container-lowest border border-surface-container-high text-[11px] text-on-surface-variant flex items-center justify-between">
             <span>Google Apps Script code template is available in your repository: <code class="font-mono text-secondary font-bold">google-apps-script.js</code></span>
             <button onclick="copyAppsScriptCode()" class="text-secondary font-bold hover:underline">Copy Code</button>
+          </div>
+
+          <!-- Admin Security PIN Settings -->
+          <div class="pt-3 border-t border-surface-container-high/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div>
+              <p class="text-xs font-bold text-on-surface flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm text-secondary">shield</span>
+                <span>Admin Passcode / Security PIN</span>
+              </p>
+              <p class="text-[11px] text-on-surface-variant">Used to authenticate access to this Admissions Database and Faculty Studio.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="text" id="custom-admin-pin-input" placeholder="New PIN (min 4 chars)" class="w-40 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest border border-surface-container-high text-xs text-on-surface font-mono focus:outline-none"/>
+              <button onclick="changeAdminSecurityPin()" class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-bold hover:bg-primary-container transition-colors shrink-0">
+                Update PIN
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -2165,8 +2246,118 @@ Hello Saif Knowledge Hub, I have submitted my registration details online. Pleas
       closeQuickEnrollModal();
     }
 
-    // Admissions Database UI Modal & Dashboard
-    function openDatabaseModal() {
+    // =========================================================================
+    // ADMIN AUTHENTICATION & SECURITY SYSTEM
+    // =========================================================================
+    const DEFAULT_ADMIN_PIN = 'skh786';
+
+    function getAdminPin() {
+      return localStorage.getItem('skh_admin_pin') || DEFAULT_ADMIN_PIN;
+    }
+
+    function isAdminAuthenticated() {
+      return sessionStorage.getItem('skh_admin_auth') === 'true';
+    }
+
+    function openAdminAuthModal(target = 'database') {
+      if (isAdminAuthenticated()) {
+        if (target === 'faculty') {
+          openManageFacultyModal(true);
+        } else {
+          openDatabaseModal(true);
+        }
+        return;
+      }
+
+      const modal = document.getElementById('admin-auth-modal');
+      const targetInput = document.getElementById('admin-auth-target');
+      const pinInput = document.getElementById('admin-pin-input');
+      const errorBox = document.getElementById('admin-auth-error');
+
+      if (targetInput) targetInput.value = target;
+      if (pinInput) pinInput.value = '';
+      if (errorBox) errorBox.classList.add('hidden');
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => pinInput?.focus(), 150);
+      }
+    }
+
+    function closeAdminAuthModal() {
+      const modal = document.getElementById('admin-auth-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    function handleAdminAuthSubmit(e) {
+      e.preventDefault();
+      const enteredPin = document.getElementById('admin-pin-input')?.value.trim();
+      const target = document.getElementById('admin-auth-target')?.value || 'database';
+      const errorBox = document.getElementById('admin-auth-error');
+
+      const currentPin = getAdminPin();
+
+      if (enteredPin === currentPin) {
+        // Authenticated! Store in session
+        sessionStorage.setItem('skh_admin_auth', 'true');
+        closeAdminAuthModal();
+        showToast("Admin session authenticated.");
+
+        if (target === 'faculty') {
+          openManageFacultyModal(true);
+        } else {
+          openDatabaseModal(true);
+        }
+      } else {
+        if (errorBox) {
+          errorBox.classList.remove('hidden');
+        }
+      }
+    }
+
+    function adminLogout() {
+      sessionStorage.removeItem('skh_admin_auth');
+      closeDatabaseModal();
+      closeManageFacultyModal();
+      showToast("Admin portal locked.");
+    }
+
+    function changeAdminSecurityPin() {
+      const input = document.getElementById('custom-admin-pin-input');
+      const newPin = input ? input.value.trim() : '';
+      if (!newPin || newPin.length < 4) {
+        alert("Please enter a PIN with at least 4 characters.");
+        return;
+      }
+      localStorage.setItem('skh_admin_pin', newPin);
+      input.value = '';
+      showToast("Admin PIN updated successfully!");
+    }
+
+    function togglePinVisibility() {
+      const input = document.getElementById('admin-pin-input');
+      const icon = document.getElementById('pin-visibility-icon');
+      if (!input || !icon) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    // Admissions Database UI Modal & Dashboard (PIN Protected)
+    function openDatabaseModal(isAuthed = false) {
+      if (!isAuthed && !isAdminAuthenticated()) {
+        openAdminAuthModal('database');
+        return;
+      }
+
       const modal = document.getElementById('leads-database-modal');
       const urlInput = document.getElementById('google-sheet-url-input');
       const savedUrl = getGoogleSheetUrl();
@@ -2510,6 +2701,10 @@ function doPost(e) {
     }
 
     // Modal background click close
+    document.getElementById('admin-auth-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'admin-auth-modal') closeAdminAuthModal();
+    });
+
     document.getElementById('quick-enroll-modal')?.addEventListener('click', (e) => {
       if (e.target.id === 'quick-enroll-modal') closeQuickEnrollModal();
     });
@@ -2522,16 +2717,28 @@ function doPost(e) {
       if (e.target.id === 'course-details-modal') closeCourseDetails();
     });
 
-    // Close modals on Escape key
+    // Close modals on Escape key & Admin keyboard shortcut
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        closeAdminAuthModal();
         closeQuickEnrollModal();
         closeDatabaseModal();
         closeCourseDetails();
         closeManageFacultyModal();
         closeMobileMenu();
       }
+
+      // Admin secret shortcut: Ctrl + Shift + A (or Cmd + Shift + A)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        openAdminAuthModal('database');
+      }
     });
+
+    // Check URL query parameters for direct admin login (?admin=true)
+    if (window.location.search.includes('admin=')) {
+      setTimeout(() => openAdminAuthModal('database'), 400);
+    }
 
     // Scroll spy for active navbar highlighting
     window.addEventListener('scroll', () => {
@@ -2714,7 +2921,11 @@ function doPost(e) {
       });
     }
 
-    function openManageFacultyModal() {
+    function openManageFacultyModal(isAuthed = false) {
+      if (!isAuthed && !isAdminAuthenticated()) {
+        openAdminAuthModal('faculty');
+        return;
+      }
       const modal = document.getElementById('manage-faculty-modal');
       const container = document.getElementById('faculty-manager-list');
       const badge = document.getElementById('faculty-count-badge');
